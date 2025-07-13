@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "name": "api-productos-jwt",
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.js"
+    }
+  ],
+  "env": {
+    "JWT_SECRET": "@jwt-secret",
+    "JWT_EXPIRES_IN": "24h",
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "app.js": {
+      "maxDuration": 30
+    }
+  }
+}
