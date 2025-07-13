@@ -3,14 +3,14 @@
   "name": "api-productos-jwt",
   "builds": [
     {
-      "src": "app.js",
+      "src": "index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.js"
+      "dest": "index.js"
     }
   ],
   "env": {
@@ -19,7 +19,7 @@
     "NODE_ENV": "production"
   },
   "functions": {
-    "app.js": {
+    "index.js": {
       "maxDuration": 30
     }
   }
